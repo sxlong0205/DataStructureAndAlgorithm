@@ -2,7 +2,7 @@ public abstract class Sort<T extends Comparable<T>> {
     public abstract void sort(T[] nums);
 
     //判断v是否小于w
-    protected boolean less(T v, T w) {
+    protected boolean less(Comparable v, Comparable w) {
         return v.compareTo(w) < 0;
     }
 
