@@ -5,6 +5,7 @@ import java.util.List;
 public class QuickSort<T extends Comparable<T>> extends Sort<T> {
     @Override
     public void sort(T[] nums) {
+        //快排在乱序情况下效果非常好
         shuffle(nums);
         sort(nums, 0, nums.length - 1);
     }

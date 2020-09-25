@@ -39,14 +39,14 @@ public class MergeSort<T extends Comparable<T>> extends Sort<T> {
             }
         }
 
-        while (p1 <= middle){
+        while (p1 <= middle) {
             assist[i++] = (T) nums[p1++];
         }
-        while (p2 <= middle){
+        while (p2 <= high) {
             assist[i++] = (T) nums[p2++];
         }
 
-        for (int index = low; index <= high; index++){
+        for (int index = low; index <= high; index++) {
             nums[index] = assist[index];
         }
     }
