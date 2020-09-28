@@ -1,3 +1,5 @@
+package SortAlgorithm;
+
 public abstract class Sort<T extends Comparable<T>> {
     public abstract void sort(T[] nums);
 
@@ -11,5 +13,6 @@ public abstract class Sort<T extends Comparable<T>> {
         T t = a[i];
         a[i] = a[j];
         a[j] = t;
+
     }
 }

@@ -1,3 +1,5 @@
+package SortAlgorithm;
+
 public class BubbleSort<T extends Comparable<T>> extends Sort<T> {
 
     @Override

@@ -1,3 +1,5 @@
+package SortAlgorithm;
+
 public class InsertionSort<T extends Comparable<T>> extends Sort<T> {
     @Override
     public void sort(T[] nums) {
