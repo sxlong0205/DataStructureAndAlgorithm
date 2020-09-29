@@ -1,6 +1,12 @@
 package LinearTable;
 
-//括号匹配
+/**
+ * 括号匹配
+ *
+ * @author: Code Dragon
+ * @date: 2020/9/29 10:54
+ * @return
+ */
 public class BracketsMatch {
     private static boolean isMatch(String str) {
         Stack<String> chars = new Stack<>();

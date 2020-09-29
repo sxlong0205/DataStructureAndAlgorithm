@@ -12,7 +12,14 @@ public class BiLinkList<T> implements Iterable<T> {
         head = new Node(null, null, null);
     }
 
-    //清空当前链表
+    /**
+     * 清空当前链表
+     *
+     * @param
+     * @return void
+     * @author: Code Dragon
+     * @date: 2020/9/29 10:52
+     */
     public void clear() {
         last = null;
         head.next = last;
@@ -21,17 +28,38 @@ public class BiLinkList<T> implements Iterable<T> {
         N = 0;
     }
 
-    //获取链表长度
+    /**
+     * 获取链表长度
+     *
+     * @param
+     * @return int
+     * @author: Code Dragon
+     * @date: 2020/9/29 10:52
+     */
     public int length() {
         return N;
     }
 
-    //判空函数
+    /**
+     * 判空函数
+     *
+     * @param
+     * @return boolean
+     * @author: Code Dragon
+     * @date: 2020/9/29 10:52
+     */
     public boolean isEmpty() {
         return N == 0;
     }
 
-    //在尾部插入元素
+    /**
+     * 在尾部插入元素
+     *
+     * @param t
+     * @return void
+     * @author: Code Dragon
+     * @date: 2020/9/29 10:52
+     */
     public void insert(T t) {
         if (last == null) {
             last = new Node(t, head, null);
@@ -45,7 +73,15 @@ public class BiLinkList<T> implements Iterable<T> {
         N++;
     }
 
-    //在指定位置插入元素
+    /**
+     * 在指定位置插入元素
+     *
+     * @param i
+     * @param t
+     * @return void
+     * @author: Code Dragon
+     * @date: 2020/9/29 10:52
+     */
     public void insert(int i, T t) {
         if (i < 0 || i >= N) {
             throw new RuntimeException("位置不合法");
@@ -61,7 +97,14 @@ public class BiLinkList<T> implements Iterable<T> {
         N++;
     }
 
-    //获取链表中指定位置元素
+    /**
+     * 获取链表中指定位置元素
+     *
+     * @param i
+     * @return T
+     * @author: Code Dragon
+     * @date: 2020/9/29 10:53
+     */
     public T get(int i) {
         if (i < 0 || i >= N) {
             throw new RuntimeException("位置不合法");
@@ -74,7 +117,14 @@ public class BiLinkList<T> implements Iterable<T> {
         return (T) curr.item;
     }
 
-    //获取链表指定元素
+    /**
+     * 获取链表指定元素
+     *
+     * @param t
+     * @return int
+     * @author: Code Dragon
+     * @date: 2020/9/29 10:53
+     */
     public int indexOf(T t) {
         Node n = head;
         for (int i = 0; n.next != null; i++) {
@@ -86,7 +136,14 @@ public class BiLinkList<T> implements Iterable<T> {
         return -1;
     }
 
-    //删除指定位置元素
+    /**
+     * 删除指定位置元素
+     *
+     * @param i
+     * @return T
+     * @author: Code Dragon
+     * @date: 2020/9/29 10:53
+     */
     public T remove(int i) {
         if (i < 0 || i >= N) {
             throw new RuntimeException("位置不合法");
@@ -104,7 +161,14 @@ public class BiLinkList<T> implements Iterable<T> {
         return (T) curr.item;
     }
 
-    //获取链表第一个元素
+    /**
+     * 获取链表第一个元素
+     *
+     * @param
+     * @return T
+     * @author: Code Dragon
+     * @date: 2020/9/29 10:53
+     */
     public T getFirst() {
         if (isEmpty()) {
             return null;
@@ -112,7 +176,14 @@ public class BiLinkList<T> implements Iterable<T> {
         return (T) head.next.item;
     }
 
-    //获取链表最后一个元素
+    /**
+     * 获取链表最后一个元素
+     *
+     * @param
+     * @return T
+     * @author: Code Dragon
+     * @date: 2020/9/29 10:53
+     */
     public T getLast() {
         if (isEmpty()) {
             return null;
@@ -120,7 +191,14 @@ public class BiLinkList<T> implements Iterable<T> {
         return (T) last.item;
     }
 
-    //迭代器
+    /**
+     * 迭代器
+     *
+     * @param
+     * @return java.util.Iterator<T>
+     * @author: Code Dragon
+     * @date: 2020/9/29 10:53
+     */
     @Override
     public Iterator<T> iterator() {
         return new TIterator();
@@ -148,7 +226,14 @@ public class BiLinkList<T> implements Iterable<T> {
         reverse(head.next);
     }
 
-    //反转链表
+    /**
+     * 反转链表
+     *
+     * @param curr
+     * @return LinearTable.Node
+     * @author: Code Dragon
+     * @date: 2020/9/29 10:53
+     */
     public Node reverse(Node curr) {
         if (curr.next == null) {
             head.next = curr;
@@ -161,7 +246,14 @@ public class BiLinkList<T> implements Iterable<T> {
         return curr;
     }
 
-    //利用快慢指针获取链表中间值
+    /**
+     * 利用快慢指针获取链表中间值
+     *
+     * @param first
+     * @return java.lang.String
+     * @author: Code Dragon
+     * @date: 2020/9/29 10:54
+     */
     public static String getMid(Node<String> first) {
         Node<String> slow = first;
         Node<String> fast = first;
@@ -172,7 +264,14 @@ public class BiLinkList<T> implements Iterable<T> {
         return slow.item;
     }
 
-    //判断链表中是否有环
+    /**
+     * 判断链表中是否有环
+     *
+     * @param first
+     * @return boolean
+     * @author: Code Dragon
+     * @date: 2020/9/29 10:54
+     */
     public static boolean isCircle(Node<String> first) {
         Node<String> slow = first;
         Node<String> fast = first;
@@ -187,8 +286,15 @@ public class BiLinkList<T> implements Iterable<T> {
         return false;
     }
 
-    //获取环入口,当快慢指针相遇时，让temp指针指向head，步长为slow步长
-    //当temp和slow相遇时，就是环的入口
+    /**
+     * 获取环入口,当快慢指针相遇时，让temp指针指向head，步长为slow步长
+     * 当temp和slow相遇时，就是环的入口
+     *
+     * @param first
+     * @return LinearTable.Node
+     * @author: Code Dragon
+     * @date: 2020/9/29 10:54
+     */
     public static Node getEntrance(Node<String> first) {
         Node<String> slow = first;
         Node<String> fast = first;

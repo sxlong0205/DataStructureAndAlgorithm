@@ -12,12 +12,26 @@ public class Stack<T> implements Iterable<T> {
         N = 0;
     }
 
-    //判空操作
+    /**
+     * 判空操作
+     *
+     * @param
+     * @return boolean
+     * @author: Code Dragon
+     * @date: 2020/9/29 10:58
+     */
     public boolean isEmpty() {
         return N == 0;
     }
 
-    //压栈操作，这里用头插法
+    /**
+     * 压栈操作，这里用头插法
+     *
+     * @param t
+     * @return void
+     * @author: Code Dragon
+     * @date: 2020/9/29 10:58
+     */
     public void push(T t) {
         Node oldNext = head.next;
         Node node = new Node(t, oldNext);
@@ -25,7 +39,14 @@ public class Stack<T> implements Iterable<T> {
         N++;
     }
 
-    //弹栈操作
+    /**
+     * 弹栈操作
+     *
+     * @param
+     * @return T
+     * @author: Code Dragon
+     * @date: 2020/9/29 10:59
+     */
     public T pop() {
         Node oldNext = head.next;
         if (oldNext == null) {
@@ -36,12 +57,18 @@ public class Stack<T> implements Iterable<T> {
         return (T) oldNext.item;
     }
 
-    //获取Stack大小
+    /**
+     * 获取Stack大小
+     *
+     * @param
+     * @return int
+     * @author: Code Dragon
+     * @date: 2020/9/29 10:59
+     */
     public int size() {
         return N;
     }
 
-    //迭代器
     @Override
     public Iterator<T> iterator() {
         return new SIterator();

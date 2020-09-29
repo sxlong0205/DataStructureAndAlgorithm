@@ -25,13 +25,27 @@ public class Heap<T extends Comparable<T>> {
         items[j] = temp;
     }
 
-    //插入一个新元素
+    /**
+     * 插入一个新元素
+     *
+     * @param t
+     * @return void
+     * @author: Code Dragon
+     * @date: 2020/9/29 10:50
+     */
     public void insert(T t) {
         items[++N] = t;
         swim(N);
     }
 
-    //下沉操作
+    /**
+     * 下沉操作
+     *
+     * @param k
+     * @return void
+     * @author: Code Dragon
+     * @date: 2020/9/29 10:51
+     */
     private void swim(int k) {
         //如果到根节点则退出循环
         while (k > 1 && less(k / 2, k)) {//如果父节点小于根节点，两者交换
@@ -40,7 +54,14 @@ public class Heap<T extends Comparable<T>> {
         }
     }
 
-    //删除堆中最大元素并返回
+    /**
+     * 删除堆中最大元素并返回
+     *
+     * @param
+     * @return T
+     * @author: Code Dragon
+     * @date: 2020/9/29 10:51
+     */
     public T delMax() {
         T max = items[1];
         //将最后一个元素放到堆顶
@@ -52,7 +73,14 @@ public class Heap<T extends Comparable<T>> {
         return max;
     }
 
-    //上浮操作
+    /**
+     * 上浮操作
+     *
+     * @param k
+     * @return void
+     * @author: Code Dragon
+     * @date: 2020/9/29 10:51
+     */
     private void sink(int k) {
         //到堆底元素时结束循环
         while (2 * k <= N) {

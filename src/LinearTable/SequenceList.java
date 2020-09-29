@@ -24,7 +24,14 @@ public class SequenceList<T> implements Iterable<T> {
         return N;
     }
 
-    //获取指定元素
+    /**
+     * 获取指定元素
+     *
+     * @param i
+     * @return T
+     * @author: Code Dragon
+     * @date: 2020/9/29 10:57
+     */
     public T get(int i) {
         if (i < 0 || i >= N) {
             throw new RuntimeException("当前元素不存在");
@@ -32,7 +39,14 @@ public class SequenceList<T> implements Iterable<T> {
         return elements[i];
     }
 
-    //插入元素
+    /**
+     * 插入元素
+     *
+     * @param t
+     * @return void
+     * @author: Code Dragon
+     * @date: 2020/9/29 10:57
+     */
     public void insert(T t) {
         if (N == elements.length) {
             throw new RuntimeException("容量已满！");
@@ -40,7 +54,15 @@ public class SequenceList<T> implements Iterable<T> {
         elements[N++] = t;
     }
 
-    //在指定位置插入元素
+    /**
+     * 在指定位置插入元素
+     *
+     * @param i
+     * @param t
+     * @return void
+     * @author: Code Dragon
+     * @date: 2020/9/29 10:57
+     */
     public void insert(int i, T t) {
         if (i == elements.length) {
             throw new RuntimeException("容量已满");
@@ -58,7 +80,14 @@ public class SequenceList<T> implements Iterable<T> {
         N++;
     }
 
-    //删除指定位置元素
+    /**
+     * 删除指定位置元素
+     *
+     * @param i
+     * @return T
+     * @author: Code Dragon
+     * @date: 2020/9/29 10:57
+     */
     public T remove(int i) {
         if (i < 0 || i > N - 1) {
             throw new RuntimeException("删除元素不存在");
@@ -74,7 +103,14 @@ public class SequenceList<T> implements Iterable<T> {
         return result;
     }
 
-    //查找元素第一次出现位置
+    /**
+     * 查找元素第一次出现位置
+     *
+     * @param t
+     * @return int
+     * @author: Code Dragon
+     * @date: 2020/9/29 10:57
+     */
     public int indexOf(T t) {
         if (t == null) {
             throw new RuntimeException("查找元素不存在");
@@ -88,6 +124,14 @@ public class SequenceList<T> implements Iterable<T> {
         return -1;
     }
 
+    /**
+     * 打印输出元素
+     *
+     * @param
+     * @return void
+     * @author: Code Dragon
+     * @date: 2020/9/29 10:57
+     */
     public void showElements() {
         for (int i = 0; i < N; i++) {
             System.out.print(elements[i] + " ");
@@ -119,7 +163,14 @@ public class SequenceList<T> implements Iterable<T> {
         }
     }
 
-    //扩容
+    /**
+     * 扩容
+     *
+     * @param newSize
+     * @return void
+     * @author: Code Dragon
+     * @date: 2020/9/29 10:57
+     */
     private void resize(int newSize) {
         T[] temp = elements;
         elements = (T[]) new Objects[newSize];
@@ -128,6 +179,14 @@ public class SequenceList<T> implements Iterable<T> {
         }
     }
 
+    /**
+     * 获取当前队列大小
+     *
+     * @param
+     * @return int
+     * @author: Code Dragon
+     * @date: 2020/9/29 10:58
+     */
     public int capacity() {
         return elements.length;
     }

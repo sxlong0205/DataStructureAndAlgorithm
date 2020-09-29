@@ -1,6 +1,12 @@
 package LinearTable;
 
-//逆波兰表达式问题
+/**
+ * 逆波兰表达式问题
+ *
+ * @author: Code Dragon
+ * @date: 2020/9/29 10:56
+ * @return
+ */
 public class ReversePolishNotation {
     public static void main(String[] args) {
         String[] notation = {"3", "17", "15", "-", "*", "18", "6", "/", "+"};

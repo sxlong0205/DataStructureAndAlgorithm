@@ -1,7 +1,5 @@
 package NotationTable;
 
-import LinearTable.Node;
-
 public class SymbolTable<Key, Value> {
     private Node2 head;
     private int N;
@@ -33,7 +31,14 @@ public class SymbolTable<Key, Value> {
         N++;
     }
 
-    //删除符号表中键为key的键值对
+    /**
+     * 删除符号表中键为key的键值对
+     *
+     * @param key
+     * @return void
+     * @author: Code Dragon
+     * @date: 2020/9/29 10:52
+     */
     public void delete(Key key) {
         Node2 n = head;
         while (n.next != null) {
@@ -46,7 +51,14 @@ public class SymbolTable<Key, Value> {
         }
     }
 
-    //从符号表中获取key对应的值
+    /**
+     * 从符号表中获取key对应的值
+     *
+     * @param key
+     * @return Value
+     * @author: Code Dragon
+     * @date: 2020/9/29 10:52
+     */
     public Value get(Key key) {
         Node2 n = head;
         while (n.next != null) {

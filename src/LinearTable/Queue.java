@@ -13,17 +13,38 @@ public class Queue<T> implements Iterable<T> {
         N = 0;
     }
 
-    //判空操作
+    /**
+     * 判空操作
+     *
+     * @param
+     * @return boolean
+     * @author: Code Dragon
+     * @date: 2020/9/29 10:56
+     */
     public boolean isEmpty() {
         return N == 0;
     }
 
-    //获取队列大小
+    /**
+     * 获取队列大小
+     *
+     * @param
+     * @return int
+     * @author: Code Dragon
+     * @date: 2020/9/29 10:56
+     */
     public int size() {
         return N;
     }
 
-    //入队操作
+    /**
+     * 入队操作
+     *
+     * @param t
+     * @return void
+     * @author: Code Dragon
+     * @date: 2020/9/29 10:56
+     */
     public void enqueue(T t) {
         if (last == null) {
             last = new Node(t, null);
@@ -36,7 +57,14 @@ public class Queue<T> implements Iterable<T> {
         N++;
     }
 
-    //出队操作
+    /**
+     * 出队操作
+     *
+     * @param
+     * @return T
+     * @author: Code Dragon
+     * @date: 2020/9/29 10:56
+     */
     public T dequeue() {
         if (isEmpty()) {
             return null;

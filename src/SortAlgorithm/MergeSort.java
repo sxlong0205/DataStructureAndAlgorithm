@@ -54,12 +54,4 @@ public class MergeSort<T extends Comparable<T>> extends Sort<T> {
             nums[index] = assist[index];
         }
     }
-
-    public static void main(String[] args) {
-        MergeSort<Integer> sort = new MergeSort<>();
-        Integer[] arr = {8, 4, 5, 7, 1, 3, 6, 2};
-        sort.sort(arr);
-        System.out.println(Arrays.toString(arr));
-
-    }
 }

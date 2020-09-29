@@ -7,30 +7,65 @@ public class LinkList<T> implements Iterable<T> {
     private Node head;
     private int N;
 
-    //初始化操作
+    /**
+     * 初始化操作
+     *
+     * @param
+     * @return
+     * @author: Code Dragon
+     * @date: 2020/9/29 10:55
+     */
     public LinkList() {
         head = new Node(null, null);
         N = 0;
     }
 
-    //清空链表
+    /**
+     * 清空链表
+     *
+     * @param
+     * @return void
+     * @author: Code Dragon
+     * @date: 2020/9/29 10:55
+     */
     public void clear() {
         head.next = null;
         head.item = null;
         N = 0;
     }
 
-    //获取链表长度
+    /**
+     * 获取链表长度
+     *
+     * @param
+     * @return int
+     * @author: Code Dragon
+     * @date: 2020/9/29 10:55
+     */
     public int length() {
         return N;
     }
 
-    //判空操作
+    /**
+     * 判空操作
+     *
+     * @param
+     * @return boolean
+     * @author: Code Dragon
+     * @date: 2020/9/29 10:55
+     */
     public boolean isEmpty() {
         return N == 0;
     }
 
-    //获取指定位置元素
+    /**
+     * 获取指定位置元素
+     *
+     * @param i
+     * @return T
+     * @author: Code Dragon
+     * @date: 2020/9/29 10:55
+     */
     public T get(int i) {
         if (i < 0 || i >= N) {
             throw new RuntimeException("位置不合法");
@@ -42,7 +77,14 @@ public class LinkList<T> implements Iterable<T> {
         return (T) n.item;
     }
 
-    //在尾部插入元素
+    /**
+     * 在尾部插入元素
+     *
+     * @param t
+     * @return void
+     * @author: Code Dragon
+     * @date: 2020/9/29 10:55
+     */
     public void insert(T t) {
         Node n = head;
         while (n.next != null) {
@@ -53,7 +95,15 @@ public class LinkList<T> implements Iterable<T> {
         N++;
     }
 
-    //指定位置插入元素
+    /**
+     * 指定位置插入元素
+     *
+     * @param i
+     * @param t
+     * @return void
+     * @author: Code Dragon
+     * @date: 2020/9/29 10:55
+     */
     public void insert(int i, T t) {
         if (i < 0 || i >= N) {
             throw new RuntimeException("位置不合法");
@@ -71,7 +121,14 @@ public class LinkList<T> implements Iterable<T> {
         N++;
     }
 
-    //删除指定位置元素
+    /**
+     * 删除指定位置元素
+     *
+     * @param i
+     * @return T
+     * @author: Code Dragon
+     * @date: 2020/9/29 10:56
+     */
     public T remove(int i) {
         if (i < 0 || i >= N) {
             throw new RuntimeException("位置不合法");
@@ -88,7 +145,14 @@ public class LinkList<T> implements Iterable<T> {
         return (T) curr.item;
     }
 
-    //查找指定元素第一次出现位置
+    /**
+     * 查找指定元素第一次出现位置
+     *
+     * @param t
+     * @return int
+     * @author: Code Dragon
+     * @date: 2020/9/29 10:56
+     */
     public int indexOf(T t) {
         Node n = head;
         for (int i = 0; n.next != null; i++) {
