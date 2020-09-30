@@ -1,7 +1,7 @@
 package PriorityQueue;
 
 /**
- * 索引优先队列
+ * 最小索引优先队列
  *
  * @author : Code Dragon
  * create at:  2020/9/29  13:09
